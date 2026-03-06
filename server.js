@@ -1,3 +1,6 @@
+app.get("/", (req, res) => {
+  res.send("EXP-4 Backend Running");
+});
 import express from "express"
 import cors from "cors"
 import dotenv from "dotenv"
