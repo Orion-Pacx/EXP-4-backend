@@ -1,6 +1,3 @@
-app.get("/", (req, res) => {
-  res.send("EXP-4 Backend Running");
-});
 import express from "express"
 import cors from "cors"
 import dotenv from "dotenv"
@@ -18,15 +15,12 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-// database connections
 connectMongo()
 connectRedis()
 
-// experiment routes
 app.use("/api/1.4.3", ticketRoutes)
 app.use("/api/2.1.3", productRoutes)
 
-// health check
 app.get("/", (req, res) => {
   res.json({ status: "EXP-4 backend running" })
 })
